@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bethel Cemetery</title>
+    <meta name="description" content="Bethel Cemetery WebVR">
+    <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.1.0/dist/aframe-extras.min.js"></script>
+<!--    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.2/simple-sun-sky.js"></script>-->
+
+  </head>
+  <body>
+
+    <a-scene background="color: black" loading-screen="dotsColor: green; backgroundColor: black">
+
+<!--        <a-simple-sun-sky sun-position="1 1 0" fog-color="#578ABD" light-color="#6CB5FE" dark-color="#6AA3DC"></a-simple-sun-sky>-->
+
+      
+        <a-assets timeout="40000">
+
+            <a-asset-item id="surfacemodel" src="./assets/models/surfacecentered.glb"></a-asset-item>
+            <img id="skyimg" crossorigin="anonymous"  src="./assets/imgs/CGSkies_0339_free_background.jpg">
+
+        </a-assets>
+        
+        <a-sky id="sky" src="#skyimg" radius="5000"></a-sky>
+        
+        <a-entity id="rig"
+          movement-controls
+          position="0 0 0"
+          rotation="0 0 0">
+            <a-entity camera
+            position="0 1.6 0"
+            look-controls="pointerLockEnabled: true"></a-entity>
+<!--            <a-entity id="birdsounds" sound="src: #birds; autoplay: true; loop: true"></a-entity>-->
+        </a-entity>
+        
+<!--        models -->
+        <a-entity id="surface" gltf-model="#surfacemodel" rotation="0 0 0" position="0 0 0" scale="1 1 1"></a-entity>
+        
+<!--        lighting -->
+        <a-light type="ambient" color="#BBB" castShadow="true" intensity="2"></a-light>
+<!--
+        <a-light light="type: spot; color: #EEE; intensity: 4" position="-1 1 -0.625" target="#V"><a-entity id="V" position="2.15 -0.014 -0.169" visible=""></a-entity>
+        </a-light>
+-->
+
+<!--        <a-light type="ambient" color="#BBB" castShadow="true" intensity="1" target="#R4 #C9 #V23"></a-light>-->
+<!--
+        <a-light type="spot" color="#BBB" castShadow="true" intensity="4.5" angle="20" position="0 2 0" 
+                 decay=".2" distance="5" target="#left">
+        <a-entity id="left" position="-4.304 -1 -1.736" visible=""></a-entity></a-light>
+-->
+       
+    </a-scene>
+  </body>
+</html>
+
+<!--python server-->
+<!--python -m SimpleHTTPServer-->
