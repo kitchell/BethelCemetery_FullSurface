@@ -6,15 +6,8 @@
     <meta name="description" content="Bethel Cemetery WebVR">
     <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
     <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v5.1.0/dist/aframe-extras.min.js"></script>
-    <script src="js/aframe-teleport-controls.min.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Magra:700&display=swap" rel="stylesheet">
 <!--    <script src="https://unpkg.com/aframe-simple-sun-sky@^1.2.2/simple-sun-sky.js"></script>-->
 
-      <style type="text/css">
-            .a-loader-title {
-                color: white;
-                font-family: Magra;
-                }</style>
   </head>
   <body>
 
@@ -32,29 +25,6 @@
         
         <a-sky id="sky" src="#skyimg" radius="5000"></a-sky>
         
-        <a-entity id="cameraRig"
-          position="0 0 0"
-          rotation="0 0 0">
-            <a-entity id="head" camera
-            position="0 1.6 0"
-            look-controls="pointerLockEnabled: true" wasd-controls></a-entity>
-             <a-entity id="left-hand"
-                  teleport-controls="teleportOrigin: #head; collisionEntities: #surface; cameraRig: #cameraRig; startEvents: teleportstart; endEvents: teleportend"
-                  vive-controls="hand: left"
-                  oculus-touch-controls="hand: left"
-                  microsoft-motion-controls="hand: left"
-                  daydream-controls="left" gearvr-controls="left">
-        </a-entity>
-        <a-entity id="right-hand"
-                  teleport-controls="teleportOrigin: #head; collisionEntities: #surface; cameraRig: #cameraRig; startEvents: teleportstart; endEvents: teleportend"
-                  vive-controls="hand: right"
-                  microsoft-motion-controls="hand: right"
-                  oculus-touch-controls="hand: right"
-                  daydream-controls="right" gearvr-controls="right">
-        </a-entity>
-        </a-entity>
-        
-<!--
         <a-entity id="rig"
           movement-controls
           position="0 0 0"
@@ -62,12 +32,11 @@
             <a-entity camera
             position="0 1.6 0"
             look-controls="pointerLockEnabled: true"></a-entity>
-            <a-entity id="birdsounds" sound="src: #birds; autoplay: true; loop: true"></a-entity>
+<!--            <a-entity id="birdsounds" sound="src: #birds; autoplay: true; loop: true"></a-entity>-->
         </a-entity>
         
--->
 <!--        models -->
-        <a-entity id="surface" gltf-model="#surfacemodel" rotation="0 0 0" position="0 -0.802 0" scale="1 1 1"></a-entity>
+        <a-entity id="surface" gltf-model="#surfacemodel" rotation="0 0 0" position="0 0 0" scale="1 1 1"></a-entity>
         
 <!--        lighting -->
         <a-light type="ambient" color="#BBB" castShadow="true" intensity="2"></a-light>
